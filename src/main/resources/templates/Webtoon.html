@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Webtoon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div style="width: 1200px; margin: 0 auto; font-size: 13px">
+<div class="row">
+    <th:block th:each="map : ${map}">
+        <th:block th:if="${map.key.equals('mon')}">
+            <div class="col">
+            <h4>월요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('tue')}">
+            <div class="col">
+            <h4>화요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('wed')}">
+            <div class="col">
+            <h4>수요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('thu')}">
+            <div class="col">
+            <h4>목요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('fri')}">
+            <div class="col">
+            <h4>금요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('sat')}">
+            <div class="col">
+            <h4>토요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+        <th:block th:if="${map.key.equals('sun')}">
+            <div class="col">
+            <h4>일요 웹툰</h4>
+            <ul>
+                <li th:each="webtoon : ${map.value}">
+                    <div>
+                        <img th:src="${webtoon.thumb}">
+                    </div>
+                    <a th:href="@{https://comic.naver.com}+${webtoon.url}"><span th:text="${webtoon.title}"></span></a>
+                </li>
+            </ul>
+            </div>
+        </th:block>
+    </th:block>
+</div>
+</div>
+</body>
+</html>

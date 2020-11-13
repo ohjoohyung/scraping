@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.scraping.repository.WebtoonMapper">
+    <select id="getCntWebtoonByTitle" parameterType="String" resultType="int">
+        SELECT COUNT(*) AS CNT
+        FROM WEBTOON WHERE TITLE = #{title}
+    </select>
+
+    <insert id="insertWebtoon" parameterType="Webtoon">
+        INSERT INTO WEBTOON (DAY, TITLE, URL, THUMB)
+        VALUES (#{day}, #{title}, #{url}, #{thumb})
+    </insert>
+
+    <select id="getWebtoonListByDay" parameterType="int" resultType="Webtoon">
+        SELECT * FROM WEBTOON WHERE day = #{day}
+    </select>
+
+</mapper>
